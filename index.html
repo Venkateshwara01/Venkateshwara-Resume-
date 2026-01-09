@@ -3,193 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venkateshwara U D | Professional Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Venkateshwara U D | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #0f172a;
-            --accent: #3b82f6;
-            --secondary: #6366f1;
-            --text-light: #f8fafc;
-            --text-dark: #1e293b;
-            --glass: rgba(255, 255, 255, 0.95);
+            --primary: #333333;
+            --accent: #4a90e2;
+            --bg: #ffffff;
+            --text: #2d3436;
+            --light-gray: #f9f9f9;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        
-        body {
-            background: #f0f2f5;
-            color: var(--text-dark);
-            overflow-x: hidden;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: #f4f4f4; color: var(--text); line-height: 1.6; }
 
-        /* Hero Header */
-        header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            height: 400px;
+        .resume-page {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: #fff;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* Left Column (Sidebar) */
+        .sidebar {
+            width: 35%;
+            background-color: var(--white);
+            border-right: 1px solid #eee;
+            padding: 40px 30px;
         }
 
         .profile-img {
             width: 160px;
             height: 160px;
             border-radius: 50%;
-            border: 5px solid rgba(255,255,255,0.2);
-            margin-bottom: 15px;
+            background: #eee;
+            margin: 0 auto 20px;
+            display: block;
             object-fit: cover;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
         }
 
-        .profile-img:hover { transform: scale(1.05); }
-
-        .hero-content h1 { font-size: 2.5rem; letter-spacing: 1px; margin-bottom: 5px; }
-        .hero-content p { font-weight: 300; opacity: 0.9; font-size: 1.1rem; }
-
-        /* Main Container */
-        .container {
-            max-width: 1200px;
-            margin: -60px auto 50px;
-            display: grid;
-            grid-template-columns: 380px 1fr;
-            gap: 30px;
-            padding: 0 20px;
-        }
-
-        .card {
-            background: var(--glass);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-
-        h2 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        h2 i { color: var(--accent); }
-
-        /* Sidebar Elements */
-        .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            text-decoration: none;
-            color: var(--text-dark);
+        .section-title {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #333;
             margin-bottom: 15px;
-            padding: 10px;
-            border-radius: 10px;
-            transition: 0.3s;
-            background: #f8fafc;
+            margin-top: 30px;
+            padding-bottom: 5px;
         }
 
-        .contact-link:hover { background: var(--accent); color: white; transform: translateX(10px); }
+        .contact-info p { font-size: 0.9rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .contact-info i { color: var(--accent); width: 15px; }
 
-        /* Skills Progress Bars */
-        .skill-box { margin-bottom: 15px; }
-        .skill-info { display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 5px; }
-        .bar { width: 100%; height: 8px; background: #e2e8f0; border-radius: 10px; overflow: hidden; }
-        .fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--secondary)); border-radius: 10px; }
+        .skills-list, .cert-list { list-style: none; padding-left: 0; font-size: 0.9rem; }
+        .skills-list li, .cert-list li { margin-bottom: 10px; position: relative; padding-left: 15px; }
+        .skills-list li::before { content: "•"; position: absolute; left: 0; color: var(--accent); }
 
-        /* Projects */
-        .project-card {
-            background: #fff;
-            border-left: 5px solid var(--accent);
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            transition: 0.3s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        /* Right Column (Content) */
+        .main-content {
+            width: 65%;
+            padding: 40px;
         }
 
-        .project-card:hover { transform: translateY(-5px); box-shadow: 0 12px 20px rgba(0,0,0,0.08); }
-        .project-card h3 { color: var(--primary); margin-bottom: 10px; font-size: 1.1rem; }
+        header h1 { font-size: 2.8rem; text-transform: uppercase; letter-spacing: 2px; line-height: 1; }
+        header p { font-size: 1.1rem; color: #666; margin-top: 10px; text-transform: uppercase; }
 
-        /* Education Timeline */
-        .edu-item {
-            position: relative;
-            padding-left: 30px;
-            border-left: 2px solid #e2e8f0;
-            padding-bottom: 20px;
-        }
+        .content-section { margin-top: 30px; }
+        .content-section h2 { font-size: 1.3rem; text-transform: uppercase; border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-bottom: 15px; }
+        
+        .edu-item { margin-bottom: 20px; }
+        .edu-title { font-weight: 700; font-size: 1rem; }
+        .edu-meta { color: #666; font-size: 0.9rem; }
 
-        .edu-item::before {
-            content: '';
-            position: absolute;
-            left: -9px;
-            top: 0;
-            width: 16px;
-            height: 16px;
-            background: var(--accent);
-            border-radius: 50%;
-            border: 3px solid white;
-        }
+        .project-item { margin-bottom: 25px; }
+        .project-title { font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+        .project-title::before { content: "●"; font-size: 0.8rem; }
+        
+        .project-list { list-style: disc; padding-left: 40px; font-size: 0.9rem; margin-top: 5px; }
+        .project-list li { margin-bottom: 5px; }
 
-        .tag {
-            display: inline-block;
-            background: #e0e7ff;
-            color: #4338ca;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin: 0 5px 5px 0;
-        }
-
-        @media (max-width: 900px) {
-            .container { grid-template-columns: 1fr; margin-top: 20px; }
-            header { height: 350px; clip-path: none; }
+        @media (max-width: 768px) {
+            .resume-page { flex-direction: column; }
+            .sidebar, .main-content { width: 100%; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="profile.jpg" alt="Venkateshwara U D" class="profile-img">
-        <div class="hero-content">
-            <h1>Venkateshwara U D</h1>
-            <p><i class="fas fa-laptop-code"></i> Computer Science Engineering Student</p>
-        </div>
-    </header>
-
-    <div class="container">
-        <aside>
-            <div class="card">
-                <h2><i class="fas fa-id-card"></i> Contact Details</h2>
-                <a href="tel:+918310452385" class="contact-link">
-                    <i class="fas fa-phone"></i> +91 8310452385
-                </a>
-                <a href="mailto:venkateshwarasherugar01@gmail.com" class="contact-link">
-                    <i class="fas fa-envelope"></i> Email Me
-                </a>
-                <a href="https://linkedin.com/in/venkateshwara-u-d" target="_blank" class="contact-link">
-                    <i class="fab fa-linkedin"></i> LinkedIn Profile
-                </a>
-                <div class="contact-link">
-                    <i class="fas fa-map-marker-alt"></i> Mangaluru, Karnataka
-                </div>
+    <div class="resume-page">
+        <aside class="sidebar">
+            <img src="profile.jpg" alt="Venkateshwara U D" class="profile-img">
+            
+            <div class="contact-info">
+                <h3 class="section-title">Contact</h3>
+                <p><i class="fas fa-phone"></i> +91 8310452385</p>
+                <p><i class="fas fa-envelope"></i> venkateshwarasherugar01@gmail.com</p>
+                <p><i class="fab fa-linkedin"></i> linkedin.com/in/Venkateshwara-u-d</p>
             </div>
 
-            <div class="card">
-                <h2><i class="fas fa-brain"></i> Soft Skills</h2>
-                <div class="skill-box">
-                    <div class="skill-info"><span>Communication</span><span>90%</span></div>
-                    <div class="bar"><div class="fill" style="width: 90%"></div></div>
+            <h3 class="section-title">Skills</h3>
+            <p style="font-weight: bold; font-size: 0.85rem; margin-top: 10px;">TECHNICAL SKILLS</p>
+            <ul class="skills-list">
+                <li>Programming Languages: C++, Python</li>
+                <li>Web Technologies: HTML, CSS, JS</li>
+                <li>Basic Data structures</li>
+                <li>Data Base: SQL (Basics)</li>
+                <li>Tools: VS Code</li>
+            </ul>
+
+            <p style="font-weight: bold; font-size: 0.85rem; margin-top: 15px;">SOFT SKILLS</p>
+            <ul class="skills-list">
+                <li>Communication</li>
+                <li>Problem Solving & Analytic Thinking</li>
+                <li>Good Leadership and Time Management</li>
+            </ul>
+
+            <h3 class="section-title">Certificates</h3>
+            <ul class="cert-list">
+                <li>• Infosys Springboard: Generative AI in HR - Impact and Application of GEN AI</li>
+                <li>• Infosys Springboard: Generative AI for All</li>
+            </ul>
+
+            <h3 class="section-title">Language</h3>
+            <ul class="skills-list">
+                <li>English</li>
+                <li>Hindi</li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h1>Venkateshwara U D</h1>
+                <p>Computer Science Engineering</p>
+            </header>
+
+            <section class="content-section">
+                <h2>Career Objective</h2>
+                <p style="font-size: 0.95rem; text-align: justify;">
+                    Motivated 1st year B.Tech student with a strong foundation in C++, Python, and Web Development. Seeking an internship or entry-level opportunity to apply technical skills, gain industry exposure, and contribute to real-world software solutions while continuously learning and improving as a developer.
+                </p>
+            </section>
+
+            <section class="content-section">
+                <h2>Education</h2>
+                <div class="edu-item">
+                    <div class="edu-title">Bachelor of Technology (B.Tech) – Computer Science Engineering</div>
+                    <div class="edu-meta">St Aloysius (Deemed To Be University) mangaluru 575 003</div>
+                    <div class="edu-meta">Graduation: 2029</div>
                 </div>
-                <div class="skill-box">
-                    <div class="skill-info
+                <div class="edu-item">
+                    <div class="edu-title">2ND PUC – Science (PCMC) | 78% | 2025</div>
+                    <div class="edu-meta">Sri Venkatramana Pre-University Kundapura 576217</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-title">SSLC | 86.88 | 2023</div>
+                    <div class="edu-meta">GOVT High School Basrur, Kundapura taluk 576217</div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Academic Projects</h2>
+                
+                <div class="project-item">
+                    <div class="project-title">MOVIE RECOMMENDATION SYSTEM</div>
+                    <ul class="project-list">
+                        <li>Built a Python-based movie recommender that suggests content based on user preferences.</li>
+                        <li>Implemented similarity logic to generate relevant recommendations.</li>
+                        <li>Strengthened skills in data processing and problem-solving.</li>
+                    </ul>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title">Local Marketplace Platform (Concept Project)</div>
+                    <ul class="project-list">
+                        <li>Designed a hyper-local e-commerce platform connecting users with nearby local shops.</li>
+                        <li>Planned features such as product search, store locator, real-time inventory, and delivery tracking.</li>
+                        <li>Created a high-level system architecture using modern web technologies.</li>
+                        <li>Focused on transparent pricing and support for local businesses.</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
