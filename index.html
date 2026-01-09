@@ -4,106 +4,227 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Venkateshwara U D | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* This CSS works completely OFFLINE. No internet needed. */
         :root {
-            --primary: #0f172a; /* Deep Midnight Blue */
-            --accent: #2563eb;  /* High-end Blue */
-            --text-main: #1e293b;
-            --text-light: #64748b;
+            --primary: #0f172a; 
+            --accent: #2563eb;
             --bg: #f8fafc;
+            --text: #334155;
+            --white: #ffffff;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
-        body { background: var(--bg); color: var(--text-main); line-height: 1.6; }
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
 
-        /* Header Section */
+        /* Hero Header */
         header {
-            background: linear-gradient(135deg, var(--primary) 0%, #1e293b 100%);
-            color: white;
-            padding: 100px 20px 150px;
-            text-align: center;
-        }
-
-        .profile-img {
-            width: 150px; height: 150px;
-            border-radius: 50%;
-            border: 4px solid var(--accent);
-            margin-bottom: 20px;
-            object-fit: cover;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        header h1 { font-size: 3rem; text-transform: uppercase; letter-spacing: 2px; }
-        header p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 30px; }
-
-        /* Buttons */
-        .btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .btn {
-            padding: 12px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-            cursor: pointer;
-            border: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .btn-contact { background: var(--accent); color: white; }
-        .btn-contact:hover { background: #1d4ed8; transform: translateY(-3px); }
-        .btn-outline { border: 2px solid white; color: white; background: transparent; }
-        .btn-outline:hover { background: white; color: var(--primary); }
-
-        /* Content Sections */
-        .container { max-width: 1000px; margin: -80px auto 50px; padding: 0 20px; }
-        .card {
-            background: white;
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            border-bottom: 3px solid var(--accent);
-            display: inline-block;
-            margin-bottom: 25px;
-            padding-bottom: 5px;
-        }
-
-        /* Education & Projects Layout */
-        .item { margin-bottom: 30px; }
-        .item-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
-        .item-title { font-weight: 700; font-size: 1.1rem; color: var(--primary); }
-        .item-subtitle { color: var(--accent); font-weight: 600; }
-        .percentage { background: #dcfce7; color: #166534; padding: 2px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; }
-
-        .list { list-style: none; }
-        .list li { margin-bottom: 8px; position: relative; padding-left: 25px; font-size: 0.95rem; }
-        .list li::before { content: "✔"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
-
-        /* Skills Grid */
-        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .skill-tag { background: #f1f5f9; padding: 5px 12px; border-radius: 5px; font-size: 0.9rem; display: inline-block; margin: 3px; border: 1px solid #e2e8f0; }
-
-        /* Contact Details Footer */
-        .contact-footer {
-            background: var(--primary);
-            color: white;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: var(--white);
             padding: 60px 20px;
             text-align: center;
         }
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            max-width: 900px;
-            margin: 40px auto;
+
+        .profile-container {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            border: 4px solid var(--accent);
+            background-color: #ddd; /* Gray placeholder if image missing */
+            overflow: hidden;
         }
-        .contact-item i { font-size: 2rem; color: var(--accent); margin-bottom: 15px; }
-        .contact-item a { color: white; text
+
+        .profile-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 { margin: 0; font-size: 2.5rem; letter-spacing: 1px; }
+        .subtitle { font-size: 1.1rem; opacity: 0.9; margin-top: 10px; color: #cbd5e1; }
+
+        /* Buttons */
+        .btn-container { margin-top: 25px; }
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+            transition: 0.2s;
+        }
+        .btn-primary { background-color: var(--accent); color: white; }
+        .btn-primary:hover { background-color: #1d4ed8; }
+        .btn-secondary { border: 2px solid white; color: white; }
+        .btn-secondary:hover { background-color: white; color: var(--primary); }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: -40px auto 40px;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            margin-bottom: 20px;
+            padding-bottom: 5px;
+        }
+
+        /* Items (Education/Projects) */
+        .item { margin-bottom: 25px; border-left: 3px solid #e2e8f0; padding-left: 20px; }
+        .item-title { font-weight: bold; font-size: 1.1rem; color: #1e293b; }
+        .item-sub { color: var(--accent); font-weight: 600; font-size: 0.9rem; margin-bottom: 5px; display: block; }
+        
+        ul { padding-left: 20px; margin-top: 5px; }
+        li { margin-bottom: 5px; }
+
+        /* Skills Tags */
+        .tag {
+            display: inline-block;
+            background: #eff6ff;
+            color: var(--accent);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            border: 1px solid #dbeafe;
+        }
+
+        /* Footer Contact */
+        .contact-section {
+            text-align: center;
+            padding: 20px;
+        }
+        .contact-link {
+            display: block;
+            margin: 10px 0;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="profile-container">
+            <img src="profile.jpg" alt="Photo"> 
+        </div>
+        <h1>Venkateshwara U D</h1>
+        <p class="subtitle">Computer Science Engineering Student</p>
+        
+        <div class="btn-container">
+            <a href="mailto:venkateshwarasherugar01@gmail.com" class="btn btn-primary">✉️ Email Me</a>
+            <a href="tel:+918310452385" class="btn btn-secondary">📞 Call Me</a>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <div class="card">
+            <h2>🎯 Career Objective</h2>
+            <p>Motivated 1st year B.Tech student with a strong foundation in C++, Python, and Web Development. Seeking an internship or entry-level opportunity to apply technical skills, gain industry exposure, and contribute to real-world software solutions while continuously learning and improving as a developer.</p>
+        </div>
+
+        <div class="card">
+            <h2>🎓 Education</h2>
+            
+            <div class="item">
+                <div class="item-title">B.Tech - Computer Science Engineering</div>
+                <span class="item-sub">St Aloysius (Deemed To Be University) Mangaluru | 2029</span>
+            </div>
+
+            <div class="item">
+                <div class="item-title">2ND PUC – Science (PCMC) | 78%</div>
+                <span class="item-sub">Sri Venkatramana Pre-University Kundapura | 2025</span>
+            </div>
+
+            <div class="item">
+                <div class="item-title">SSLC | 86.88%</div>
+                <span class="item-sub">GOVT High School Basrur, Kundapura | 2023</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>💻 Academic Projects</h2>
+            
+            <div class="item">
+                <div class="item-title">Movie Recommendation System</div>
+                <ul>
+                    <li>Built a Python-based movie recommender that suggests content based on user preferences.</li>
+                    <li>Implemented similarity logic to generate relevant recommendations.</li>
+                    <li>Strengthened skills in data processing and problem-solving.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-title">Local Marketplace Platform (Concept)</div>
+                <ul>
+                    <li>Designed a hyper-local e-commerce platform connecting users with nearby local shops.</li>
+                    <li>Planned features such as product search, store locator, real-time inventory, and delivery tracking.</li>
+                    <li>Created a high-level system architecture using modern web technologies.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🛠️ Skills</h2>
+            <p><strong>Technical:</strong></p>
+            <div>
+                <span class="tag">C++</span>
+                <span class="tag">Python</span>
+                <span class="tag">HTML/CSS/JS</span>
+                <span class="tag">SQL</span>
+                <span class="tag">VS Code</span>
+            </div>
+            <p style="margin-top: 15px;"><strong>Soft Skills:</strong></p>
+            <div>
+                <span class="tag">Communication</span>
+                <span class="tag">Problem Solving</span>
+                <span class="tag">Leadership</span>
+                <span class="tag">Time Management</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🏆 Certificates</h2>
+            <ul>
+                <li>Infosys Springboard: Generative AI in HR - Impact and Application of GEN AI</li>
+                <li>Infosys Springboard: Generative AI for All</li>
+            </ul>
+        </div>
+
+        <div class="card contact-section">
+            <h2>📞 Contact Details</h2>
+            <a href="tel:+918310452385" class="contact-link">📞 +91 8310452385</a>
+            <a href="mailto:venkateshwarasherugar01@gmail.com" class="contact-link">✉️ venkateshwarasherugar01@gmail.com</a>
+            <a href="https://linkedin.com/in/Venkateshwara-u-d" class="contact-link">🔗 LinkedIn Profile</a>
+            <p style="margin-top: 10px; color: #666;">📍 Mangaluru, Karnataka</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
